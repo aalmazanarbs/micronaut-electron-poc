@@ -1,0 +1,30 @@
+micronaut:
+    application:
+        name: micronaut-postgres-reactive
+
+datasources:
+    default:
+        url: 'jdbc:postgresql://localhost:5432/micronaut'
+        username: 'micronaut'
+        password: 'micronaut'
+        driverClassName: 'org.postgresql.Driver'
+
+liquibase:
+    datasources:
+        default:
+            change-log: 'classpath:db/changelog/db.changelog-master.yml'
+            # Fix for same database name and schema since reactive PostgresqlConnectionConfiguration doenst not support schema
+            default-schema: 'public'
+
+endpoints:
+    liquibase:
+        enabled: true
+        sensitive: false
+
+poc:
+    postgres:
+        host: localhost
+        port: 5432
+        database: micronaut
+        username: micronaut
+        password: micronaut
