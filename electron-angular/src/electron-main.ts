@@ -10,8 +10,8 @@ function createWindow() {
         height: 800,
         minWidth: 1281,
         minHeight: 800,
-        backgroundColor: '#3ecf7d',
-        icon: path.join(__dirname, 'electron-angular/assets/app_icon.png'),
+        // backgroundColor: '#3ecf7d',
+        icon: path.join(__dirname, 'electron-angular/assets/icons/app_icon.png'),
         webPreferences: {
             nodeIntegration: false,
             allowRunningInsecureContent: false,
@@ -28,8 +28,13 @@ function createWindow() {
         })
     );
 
+    mainWindow.webContents.on('new-window', (e, link) => {
+        e.preventDefault();
+        require('electron').shell.openExternal(link);
+    });
+
     // Open the DevTools.
-    // mainWindow.webContents.openDevTools();
+    mainWindow.webContents.openDevTools();
 
     mainWindow.on('closed', () => {
         mainWindow = null;
