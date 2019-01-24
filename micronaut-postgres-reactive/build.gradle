@@ -29,7 +29,8 @@ dependencyManagement {
 dependencies {
     annotationProcessor "io.micronaut:micronaut-inject-java"
     annotationProcessor "io.micronaut:micronaut-validation"
-    compile "io.micronaut.configuration:micronaut-liquibase"
+    annotationProcessor "io.micronaut.spring:micronaut-spring-annotation:1.0.0.M3"
+    
     compile "io.micronaut:micronaut-http-client"
     compile "io.micronaut:micronaut-http-server-netty"
     compile "io.micronaut:micronaut-inject"
@@ -37,12 +38,13 @@ dependencies {
     compile "io.micronaut:micronaut-runtime"
 
     // Reactive Postgres
-    compile "org.springframework:spring-core:5.1.4.RELEASE"
-    compile "org.springframework.data:spring-data-jdbc:1.0.0.r2dbc-SNAPSHOT"
+    compile "org.springframework.data:spring-data-r2dbc:1.0.0.M1"
     compile "io.r2dbc:r2dbc-postgresql:1.0.0.M6"
+    compile "org.springframework:spring-core:5.1.4.RELEASE"
     compile "io.projectreactor:reactor-core"
 
-    // Only for liquibase
+    // Liquibase
+    compile "io.micronaut.configuration:micronaut-liquibase"
     compile "io.micronaut.configuration:micronaut-jdbc-hikari"
     runtime 'org.postgresql:postgresql:42.2.5'
 

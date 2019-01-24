@@ -10,7 +10,10 @@
 <div class="basic-container">
     <div style="text-align:center">
         <img width="200" src="assets/images/pizza.jpg">
-        <button class="add" (click)="addPizza();" mat-fab>Add</button>
+        <button class="cfab" (click)="addPizza();" mat-fab>Add</button>
+        <button class="cfab" mat-fab (click)="getPizzas();">
+            <mat-icon>refresh</mat-icon>
+          </button>
     </div>
 
     <table mat-table [dataSource]="pizzas" class="mat-elevation-z8">

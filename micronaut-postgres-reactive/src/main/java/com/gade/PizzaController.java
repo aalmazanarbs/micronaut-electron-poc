@@ -26,7 +26,6 @@ public class PizzaController {
 
     @Post
     public Mono<Pizza> addOne(@Body PizzaRequest pizzaRequest) {
-        return Mono.just(new Pizza.Builder().withName(pizzaRequest.getName()).build());
-        // return pizzaRepository.save(new Pizza.Builder().withName(pizzaRequest.getName()).build());
+        return pizzaRepository.save(new Pizza.Builder().withName(pizzaRequest.getName()).build());
     }
 }
