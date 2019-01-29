@@ -25,3 +25,77 @@ databaseChangeLog:
                   type: varchar(255)
                   constraints:
                     nullable: false
+  - changeSet:
+      id: 2
+      author: micronaut.ddl
+      changes:
+        - insert:
+            schemaName: micronaut
+            tableName: pizza
+            columns:
+              - column:
+                  name: name
+                  value: "Hawaiana"
+        - insert:
+            schemaName: micronaut
+            tableName: pizza
+            columns:
+              - column:
+                  name: name
+                  value: "Barbacoa"
+        - insert:
+            schemaName: micronaut
+            tableName: pizza
+            columns:
+              - column:
+                  name: name
+                  value: "4 quesos"
+        - insert:
+            schemaName: micronaut
+            tableName: pizza
+            columns:
+              - column:
+                  name: name
+                  value: "Margherita"
+        - insert:
+            schemaName: micronaut
+            tableName: pizza
+            columns:
+              - column:
+                  name: name
+                  value: "Napolitana"
+        - insert:
+            schemaName: micronaut
+            tableName: pizza
+            columns:
+              - column:
+                  name: name
+                  value: "Pollo"
+        - insert:
+            schemaName: micronaut
+            tableName: pizza
+            columns:
+              - column:
+                  name: name
+                  value: "Pepperoni"
+        - insert:
+            schemaName: micronaut
+            tableName: pizza
+            columns:
+              - column:
+                  name: name
+                  value: "Carbonara"
+        - insert:
+            schemaName: micronaut
+            tableName: pizza
+            columns:
+              - column:
+                  name: name
+                  value: "Jamon y queso"
+        - insert:
+            schemaName: micronaut
+            tableName: pizza
+            columns:
+              - column:
+                  name: name
+                  value: "Bacon"
